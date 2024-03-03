@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -57,6 +58,8 @@ class Post(BaseModel):
 
     is_featured = models.BooleanField(default=False)
     is_popular = models.BooleanField(default=False)
+
+    objects = models.manager
 
     def __str__(self):
         return self.title
